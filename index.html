@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="موقع تعليمي بالعربي عن ADHD: شرح مبسط، أنواع وأعراض، خرافات وحقايق، قسم للأهل والمدرسين، ومؤقت تركيز ومقسّم مهام.">
+<title>تاب واحد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Readex+Pro:wght@300..700&display=swap">
+<style>
+/* Layout: RTL editorial page. Sticky head column beside the body column; hero pairs the headline with a browser-tabs mock; tools sit on one tinted band. */
+:root{
+  --bg:#F1F5F3;
+  --surface:#FFFFFF;
+  --ink:#10222B;
+  --muted:#496068;
+  --line:#D2DDD9;
+  --teal:#0B7A78;
+  --teal-ink:#075957;
+  --on-teal:#FFFFFF;
+  --teal-soft:#DCEEEB;
+  --mark:#FFD84A;
+  --mark-soft:#FFF0B0;
+  --coral:#E4572E;
+  --coral-ink:#AE3519;
+  --coral-soft:#FADFD5;
+  --shadow:0 1px 0 rgba(16,34,43,.05),0 14px 28px -16px rgba(16,34,43,.28);
+  --f-display:'Lalezar','Readex Pro',Tahoma,sans-serif;
+  --f-body:'Readex Pro','Segoe UI',Tahoma,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B181E;--surface:#122329;--ink:#E7F0EE;--muted:#9DB3B3;--line:#244048;
+    --teal:#45C4BF;--teal-ink:#6FD6D1;--on-teal:#06211F;--teal-soft:#123A3A;
+    --mark:#6B5C12;--mark-soft:#4A4010;
+    --coral:#FF8D6B;--coral-ink:#FF9C80;--coral-soft:#3A201A;
+    --shadow:0 14px 28px -16px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B181E;--surface:#122329;--ink:#E7F0EE;--muted:#9DB3B3;--line:#244048;
+  --teal:#45C4BF;--teal-ink:#6FD6D1;--on-teal:#06211F;--teal-soft:#123A3A;
+  --mark:#6B5C12;--mark-soft:#4A4010;
+  --coral:#FF8D6B;--coral-ink:#FF9C80;--coral-soft:#3A201A;
+  --shadow:0 14px 28px -16px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.85;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+h1,h2,h3,h4,p,ul,ol{margin:0}
+a{color:var(--teal-ink)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+mark{background:linear-gradient(to top,var(--mark) 0 42%,transparent 42%);color:inherit;padding:0 .12em}
+bdi{unicode-bidi:isolate}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;flex-wrap:wrap;gap:4px 20px;padding-block:8px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:1.55rem;line-height:1.2;color:var(--ink);text-decoration:none;flex:none}
+.brand svg{width:30px;height:30px;color:var(--teal)}
+.nav{display:flex;gap:2px;overflow-x:auto;min-width:0;flex:1 1 280px;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;padding:5px 13px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:.9rem;line-height:1.6}
+.nav a:hover{color:var(--ink);background:var(--teal-soft)}
+.nav a[aria-current="true"]{background:var(--ink);color:var(--bg)}
+.bar{position:absolute;inset:auto 0 -1px 0;height:3px}
+.bar i{display:block;height:100%;background:var(--teal);transform-origin:100% 50%;transform:scaleX(var(--p,0))}
+
+/* buttons */
+.btn{font:inherit;font-weight:600;font-size:1rem;line-height:1.3;min-height:48px;padding:10px 22px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{background:var(--teal-soft)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--on-teal)}
+.btn.primary:hover{filter:brightness(1.08)}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* hero */
+.hero{padding-block:clamp(32px,6vw,76px) clamp(40px,6vw,72px)}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:minmax(0,1fr);align-items:center}
+@media (min-width:900px){.hero .wrap{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px}}
+.kicker{color:var(--teal-ink);font-weight:600;font-size:.92rem;margin-bottom:10px}
+h1{font-family:var(--f-display);font-weight:400;font-size:clamp(2.7rem,7.2vw,4.8rem);line-height:1.18;text-wrap:balance;margin-bottom:20px}
+.lead{font-size:1.15rem;max-width:34em;margin-bottom:26px}
+.fine{font-size:.85rem;color:var(--muted);margin-top:18px;max-width:40em;line-height:1.7}
+
+.browser{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.tabstrip{display:flex;gap:3px;align-items:flex-end;padding:10px 10px 0;background:var(--teal-soft);border-bottom:1.5px solid var(--ink)}
+.tab{flex:1 1 0;min-width:0;max-width:200px;display:flex;align-items:center;gap:6px;padding:7px 9px;font-size:.78rem;line-height:1.4;background:var(--bg);border:1.5px solid var(--line);border-bottom:0;border-radius:9px 9px 0 0;transition:max-width .4s ease,opacity .3s ease,padding .4s ease,border-width .4s ease}
+.tab span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tab .x{flex:none;opacity:.55;font-style:normal;margin-inline-start:auto}
+.tab.on{flex-grow:2.6;background:var(--surface);border-color:var(--ink);font-weight:600;margin-bottom:-1.5px;padding-bottom:9px}
+.browser.single .tab:not(.on){max-width:0;opacity:0;padding-inline:0;border-width:0;overflow:hidden}
+.page{padding:26px 22px 28px;display:grid;gap:4px;min-height:150px;align-content:center}
+.page small{color:var(--muted);font-size:.85rem}
+.page .big{font-family:var(--f-display);font-weight:400;font-size:2rem;line-height:1.3}
+.page .state{font-size:.95rem;color:var(--coral-ink);font-weight:600}
+.browser.single .page .state{color:var(--teal-ink)}
+.hero-ctl{display:grid;gap:10px;margin-top:16px;justify-items:start}
+.hero-ctl p{font-size:.85rem;color:var(--muted);line-height:1.7;max-width:34em}
+
+/* sections */
+.sec{padding-block:clamp(44px,7vw,88px);border-top:1px solid var(--line);scroll-margin-top:calc(env(safe-area-inset-top,0px) + 100px)}
+.sec .wrap{display:grid;gap:28px 56px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:900px){
+  .sec .wrap{grid-template-columns:minmax(0,4fr) minmax(0,8fr);align-items:start}
+  .sec.stack .wrap{grid-template-columns:minmax(0,1fr)}
+  .sec-head{position:sticky;top:calc(env(safe-area-inset-top,0px) + 100px)}
+  .sec.stack .sec-head{position:static;max-width:44em}
+}
+.meta{font-size:.85rem;color:var(--muted);margin-bottom:6px}
+h2{font-family:var(--f-display);font-weight:400;font-size:clamp(2.1rem,4.6vw,3.1rem);line-height:1.2;text-wrap:balance;margin-bottom:14px}
+h3{font-weight:700;font-size:1.1rem;line-height:1.5}
+.tldr{font-size:1rem;line-height:1.8;color:var(--ink)}
+.tldr b{display:inline-block;background:var(--mark);color:var(--ink);font-size:.78rem;line-height:1.5;padding:0 10px;border-radius:999px;margin-inline-end:8px}
+.prose{display:grid;gap:1.1em;min-width:0}
+.prose p{max-width:40em}
+.sec.tools{background:var(--teal-soft)}
+
+.ticks{list-style:none;padding:0;display:grid;gap:14px;max-width:40em}
+.ticks li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}
+.ticks svg{width:28px;height:28px;margin-top:5px;color:var(--teal)}
+
+/* types */
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{font:inherit;font-weight:600;font-size:.95rem;line-height:1.3;min-height:46px;padding:8px 18px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.seg button:hover{border-color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(18px,3vw,28px);display:grid;gap:12px;min-width:0}
+.panel h3{font-family:var(--f-display);font-weight:400;font-size:1.9rem;line-height:1.3}
+.panel .en{display:block;direction:ltr;text-align:right;color:var(--muted);font-size:.82rem;line-height:1.5}
+.cmp{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));margin-top:6px}
+.cmp div{background:var(--bg);border-radius:10px;padding:14px 16px;font-size:.95rem;line-height:1.75;min-width:0}
+.cmp h4{font-size:.88rem;color:var(--teal-ink);margin-bottom:4px}
+
+/* checklist */
+.groups{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 14px;min-width:0}
+.group h3{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:0 8px 8px}
+.cnt{font-variant-numeric:tabular-nums;color:var(--teal-ink);font-weight:700;white-space:nowrap}
+.chk{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;padding:10px 8px;border-radius:8px;cursor:pointer;font-size:.97rem;line-height:1.65}
+.chk:hover{background:var(--teal-soft)}
+.chk.on{background:var(--mark-soft)}
+.chk input{width:22px;height:22px;margin:3px 0 0;accent-color:var(--teal)}
+.result{border-radius:12px;padding:18px 20px;background:var(--teal-soft);display:grid;gap:12px;justify-items:start}
+.result.flag{background:var(--mark-soft)}
+.result p{font-size:1rem;line-height:1.8}
+.small{font-size:.85rem;color:var(--muted);line-height:1.75;max-width:42em}
+
+/* myths */
+.myths{display:grid;min-width:0}
+.myth{border-top:1px solid var(--line)}
+.myth:last-child{border-bottom:1px solid var(--line)}
+.myth summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:18px 4px;font-weight:600;line-height:1.7}
+.myth summary::-webkit-details-marker{display:none}
+.tag{font-size:.74rem;font-weight:700;line-height:1.6;padding:0 11px;border-radius:999px;white-space:nowrap}
+.tag.m{background:var(--coral-soft);color:var(--coral-ink)}
+.tag.f{background:var(--teal-soft);color:var(--teal-ink)}
+.plus{font-size:1.5rem;line-height:1;color:var(--muted);transition:transform .2s}
+.myth[open] .plus{transform:rotate(45deg)}
+.ans{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline;padding:0 4px 22px}
+.ans p{font-size:1rem}
+
+/* help */
+.help{display:grid;gap:36px 40px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.help article{border-top:2px solid var(--ink);padding-top:14px;min-width:0}
+.help h3{font-family:var(--f-display);font-weight:400;font-size:1.6rem;line-height:1.35;margin-bottom:6px}
+.help p,.help li{font-size:1rem;line-height:1.8}
+.help ul{padding-inline-start:1.2em;display:grid;gap:4px}
+
+/* know / who */
+.who-grid{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:6px}
+.who-grid .full{grid-column:1/-1}
+@media (max-width:640px){.who-grid{grid-template-columns:minmax(0,1fr)}}
+.blk{background:var(--bg);border-radius:10px;padding:14px 18px;font-size:.95rem;line-height:1.75;min-width:0}
+.blk h4{font-size:.9rem;color:var(--teal-ink);margin-bottom:6px}
+.blk.no h4{color:var(--coral-ink)}
+.blk ul{padding-inline-start:1.1em;display:grid;gap:6px}
+
+/* tools */
+.tools-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.tool{background:var(--surface);border:1.5px solid var(--ink);border-radius:14px;padding:clamp(18px,3vw,26px);display:grid;gap:16px;align-content:start;min-width:0}
+.tool h3{font-family:var(--f-display);font-weight:400;font-size:1.7rem;line-height:1.3}
+.sub{font-size:.95rem;color:var(--muted);line-height:1.7}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-weight:600;font-size:.92rem;line-height:1.3;min-height:44px;padding:6px 16px;border-radius:999px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ring{position:relative;width:min(230px,66vw);aspect-ratio:1;margin-inline:auto;max-width:100%}
+.ring svg{display:block;width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .trk{stroke:var(--line)}
+.ring .prg{stroke:var(--coral);stroke-linecap:round;stroke-dasharray:339.292;stroke-dashoffset:0;transition:stroke-dashoffset .25s linear}
+.clock{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:2px}
+.clock b{font-family:var(--f-display);font-weight:400;font-size:3.2rem;line-height:1.1;direction:ltr;font-variant-numeric:tabular-nums}
+.clock small{color:var(--muted);font-size:.85rem}
+.status{background:var(--bg);border-radius:10px;padding:12px 14px;font-size:.95rem;line-height:1.75;min-height:3.6em}
+.status.alert{background:var(--mark-soft)}
+.inline{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--muted);cursor:pointer}
+.inline input{width:20px;height:20px;accent-color:var(--teal)}
+.lbl{font-weight:600;font-size:.92rem;line-height:1.5}
+.field{font:inherit;font-size:1rem;width:100%;min-height:48px;padding:10px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);min-width:0}
+.field:focus-visible{border-color:var(--ink)}
+.eg{font-size:.85rem;color:var(--coral-ink);line-height:1.7;font-weight:600}
+.pwrap{display:flex;align-items:center;gap:12px}
+.pbar{flex:1;height:10px;border-radius:999px;background:var(--line);overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s ease}
+#st-count{font-size:.88rem;font-weight:700;color:var(--teal-ink);white-space:nowrap}
+.steps{list-style:none;padding:0;display:grid;gap:8px}
+.step{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border-radius:10px;background:var(--bg);line-height:1.6}
+.step input{width:22px;height:22px;accent-color:var(--teal);margin:0}
+.step label{cursor:pointer;font-size:.97rem;min-width:0;overflow-wrap:anywhere}
+.step.next{background:var(--mark-soft);outline:2px solid var(--ink)}
+.step.next em{display:block;font-style:normal;font-size:.75rem;font-weight:700;color:var(--coral-ink)}
+.step.done label{text-decoration:line-through;color:var(--muted)}
+.del{font:inherit;font-size:1.3rem;line-height:1;width:36px;height:36px;border-radius:50%;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.del:hover{background:var(--coral-soft);color:var(--coral-ink)}
+.addrow{display:flex;gap:10px;flex-wrap:wrap}
+.addrow .field{flex:1 1 180px}
+
+/* care */
+.seq{counter-reset:s;list-style:none;padding:0;display:grid;gap:26px;max-width:42em}
+.seq li{counter-increment:s;display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:start}
+.seq li::before{content:counter(s,arabic-indic);font-family:var(--f-display);font-size:2.4rem;line-height:1.1;color:var(--teal-ink)}
+.seq h3{margin-bottom:4px}
+.seq p{font-size:1rem;line-height:1.8}
+.support{margin-top:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;max-width:42em;font-size:1rem;line-height:1.8}
+
+.foot{padding-block:40px 24px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;line-height:1.8}
+.foot .wrap{display:grid;gap:10px}
+.foot ul{padding-inline-start:1.2em}
+.credit{margin-top:14px;padding-top:16px;border-top:1px solid var(--line);text-align:center;font-size:.88rem;color:var(--muted)}
+.credit b{color:var(--ink);font-weight:600}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+
+[hidden]{display:none!important}
+img{max-width:100%}
+</style>
+
+</head>
+<body>
+<div id="app" dir="rtl" lang="ar">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="تاب واحد، أول الصفحة">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h8l2-3h6l2 3h8v15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M13 18h6"/></svg>
+      تاب واحد
+    </a>
+    <nav class="nav" aria-label="أقسام الموقع">
+      <a href="#what">إيه هو ADHD؟</a>
+      <a href="#types">الأنواع</a>
+      <a href="#signs">الأعراض</a>
+      <a href="#myths">خرافات</a>
+      <a href="#help">اللي بيساعد</a>
+      <a href="#know">اتعرّف وافهم</a>
+      <a href="#tools">أدوات</a>
+      <a href="#care">التقييم</a>
+    </nav>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker">موقع تعليمي عن اضطراب فرط الحركة وتشتت الانتباه</p>
+      <h1>مخك فاتح <mark>٥٠ تاب</mark> في نفس الوقت.</h1>
+      <p class="lead">الـ <bdi>ADHD</bdi> مش كسل ولا قلة ذكاء ولا قلة تربية. هو اختلاف في طريقة تنظيم المخ للانتباه والاندفاع والطاقة. هنا هتفهمه على مهلك، وتجرّب أدوات بسيطة تساعدك تركّز على تاب واحد.</p>
+      <div class="row">
+        <a class="btn primary" href="#what">ابدأ من هنا</a>
+        <a class="btn" href="#tools">جرّب أداة التركيز</a>
+      </div>
+      <p class="fine">المعلومات هنا تعليمية فقط. مش بديل عن التشخيص أو العلاج عند متخصص.</p>
+    </div>
+    <div>
+      <div class="browser" id="browser" role="img" aria-label="رسم لمتصفح فيه ست تابات مفتوحة، واحد منها بس هو المهم دلوقتي">
+        <div class="tabstrip">
+          <div class="tab"><span>الفاتورة</span><i class="x">×</i></div>
+          <div class="tab"><span>رسالة</span><i class="x">×</i></div>
+          <div class="tab on"><span>تقرير الشغل</span></div>
+          <div class="tab"><span>يوتيوب</span><i class="x">×</i></div>
+          <div class="tab"><span>فكرة جت فجأة</span><i class="x">×</i></div>
+          <div class="tab"><span>الغسيل</span><i class="x">×</i></div>
+        </div>
+        <div class="page">
+          <small>التاب الشغال دلوقتي</small>
+          <b class="big">تقرير الشغل</b>
+          <p class="state" id="tabcount">٦ تابات مفتوحة</p>
+        </div>
+      </div>
+      <div class="hero-ctl">
+        <button class="btn" id="tabbtn" type="button" aria-pressed="false">اقفل التابات الزيادة</button>
+        <p>في الحقيقة مفيش زرار بيقفل التابات بالإرادة. الأدوات اللي تحت بتساعدك تعمل ده بطريقتك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="what">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">قراية دقيقة</p>
+      <h2>يعني إيه ADHD؟</h2>
+      <p class="tldr"><b>الخلاصة</b>اختلاف في تنظيم الانتباه والاندفاع والطاقة، بيبدأ من الطفولة وكتير بيكمّل للكبر.</p>
+    </header>
+    <div class="prose">
+      <p>الاسم اختصار لـ <bdi>Attention-Deficit/Hyperactivity Disorder</bdi>. ده اضطراب نمائي عصبي، يعني إن مخ صاحبه بينمو وينظّم الانتباه والحركة والاندفاع بطريقة مختلفة من الطفولة.</p>
+      <p>صاحبه <mark>مش بيرفض يركّز</mark>. مخه بيلاقي صعوبة إنه يوجّه الانتباه للحاجة المطلوبة دلوقتي، خصوصًا لو كانت مملة أو طويلة.</p>
+      <p>التقديرات بتقول إن حوالي ٥٪ من الأطفال وحوالي ٢٫٥٪ من الكبار حول العالم عندهم ADHD. الأرقام بتختلف من دراسة لأخرى، وكتير من الكبار عاشوا سنين من غير تشخيص.</p>
+      <h3>عشان المتخصص يشخّص، لازم يلاقي كل ده:</h3>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>أعراض انتباه أو فرط حركة واندفاع بعدد كافي، ومستمرة من حوالي ٦ شهور.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>بدأت قبل سن ١٢.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>ظاهرة في أكتر من مكان، زي البيت والمدرسة أو الشغل.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>بتعطّل الدراسة أو الشغل أو العلاقات فعلًا.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg><span>ومالهاش تفسير أحسن في حالة تانية بتشبهها، زي القلق أو قلة النوم.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="types">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">قراية دقيقة</p>
+      <h2>الأنواع التلاتة</h2>
+      <p class="tldr"><b>الخلاصة</b>ADHD مش شكل واحد. في اللي بيغلب عليه الشرود، واللي بيغلب عليه الحركة والاندفاع، واللي فيه الاتنين.</p>
+    </header>
+    <div class="prose">
+      <div class="seg" id="type-seg" role="group" aria-label="اختار نوع">
+        <button type="button" data-k="inatt" aria-pressed="true">غلبة الانتباه</button>
+        <button type="button" data-k="hyper" aria-pressed="false">غلبة الحركة والاندفاع</button>
+        <button type="button" data-k="comb" aria-pressed="false">النوع المشترك</button>
+      </div>
+      <div class="panel" aria-live="polite">
+        <div>
+          <h3 id="type-ar"></h3>
+          <span class="en" id="type-en"></span>
+        </div>
+        <p id="type-d"></p>
+        <div class="cmp">
+          <div><h4>عند الطفل</h4><span id="type-kid"></span></div>
+          <div><h4>عند الكبير</h4><span id="type-adult"></span></div>
+          <div><h4>ملحوظة</h4><span id="type-note"></span></div>
+        </div>
+      </div>
+      <p class="small">الأعراض بتتغيّر مع العمر. الأطفال غالبًا بتبان عليهم الحركة والاندفاع أكتر، والكبار ممكن تفضل عندهم صعوبة التنظيم والانتباه والإحساس بعدم الراحة، حتى لو الحركة الظاهرة قلّت.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="signs">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">قراية دقيقتين</p>
+      <h2>ازاي بيبان؟</h2>
+      <p class="tldr"><b>الخلاصة</b>في مجموعتين أعراض: الانتباه، وفرط الحركة والاندفاع. علّم على اللي بيحصل معاك وشوف الصورة.</p>
+    </header>
+    <div class="prose">
+      <p>القايمة دي للمراهقين والكبار، ومأخوذة من معايير التشخيص بصياغة مبسطة. هدفها إنك تلاحظ نمطك، <mark>مش إنك تشخّص نفسك</mark>. علّم بس على اللي بيحصل معاك بانتظام وبيعطّلك.</p>
+      <div class="groups">
+        <div class="group"><h3>الانتباه والتنظيم <span class="cnt" id="cnt-a">٠ من ٩</span></h3><div id="list-a"></div></div>
+        <div class="group"><h3>الحركة والاندفاع <span class="cnt" id="cnt-h">٠ من ٩</span></h3><div id="list-h"></div></div>
+      </div>
+      <div class="result" id="result" aria-live="polite">
+        <p id="result-text">علّم على اللي بيحصل معاك. مفيش إجابة صح أو غلط، ومفيش حاجة بتتحفظ أو بتتبعت لحد.</p>
+        <button class="btn" id="chk-reset" type="button">امسح التعليمات</button>
+      </div>
+      <p class="small">في التشخيص الرسمي: الأطفال لحد ١٦ سنة محتاجين ٦ أعراض على الأقل في مجموعة، ومن الأكبر ٥ على الأقل. لو بتجاوب عن طفلك، خلي العتبة ٦.</p>
+      <p class="small">ناس كتير عندهم ADHD بتحكي كمان عن مشاعر بتتغيّر بسرعة وصعوبة في تقدير الوقت. دي مش في قايمة التشخيص الرسمية، لكن المتخصص بيسأل عن تأثير الأعراض على حياتك كلها.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="myths">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">قراية دقيقتين</p>
+      <h2>خرافات وحقايق</h2>
+      <p class="tldr"><b>الخلاصة</b>أغلب اللي بتسمعه عن ADHD إما نص الحقيقة أو غلط. اضغط على أي جملة تشوف الصح.</p>
+    </header>
+    <div class="myths">
+      <details class="myth" open>
+        <summary><span class="tag m">خرافة</span><span>ADHD معناه كسل وقلة تربية.</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="ans"><span class="tag f">حقيقة</span><p>هو اختلاف نمائي في المخ، والأبحاث بتربطه بعوامل عصبية ووراثية. العقاب والتوبيخ مش بيعالجوه، لكن الدعم وتعلّم المهارات بيفرّقوا فعلًا.</p></div>
+      </details>
+      <details class="myth">
+        <summary><span class="tag m">خرافة</span><span>ده بس للأطفال، وبيختفي لما يكبروا.</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="ans"><span class="tag f">حقيقة</span><p>عند ناس كتير الأعراض بتكمّل لحد الكبر، بس شكلها بيتغيّر. الحركة الزايدة ممكن تقل، وبيفضل الإحساس بعدم الراحة وصعوبة التنظيم والانتباه.</p></div>
+      </details>
+      <details class="myth">
+        <summary><span class="tag m">خرافة</span><span>اللي بيركّز ساعات في لعبة أو حاجة بيحبها مفيهوش ADHD.</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="ans"><span class="tag f">حقيقة</span><p>ناس كتير عندهم ADHD بتحكي عن تركيز عالي جدًا في اللي بيشدّهم، وصعوبة كبيرة في اللي ممل. المشكلة في التحكم في الانتباه، مش في إنه مش موجود.</p></div>
+      </details>
+      <details class="myth">
+        <summary><span class="tag m">خرافة</span><span>البنات مش بيجيلهم ADHD.</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="ans"><span class="tag f">حقيقة</span><p>بيجيلهم. بس اكتشافه بيتأخر كتير لأن الأعراض ساعات بتبان شرود وتشتت هادي، مش حركة وإزعاج، فبتعدّي من غير ما حد ياخد باله.</p></div>
+      </details>
+      <details class="myth">
+        <summary><span class="tag m">خرافة</span><span>الدوا هو العلاج الوحيد.</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="ans"><span class="tag f">حقيقة</span><p>الدوا بيساعد ناس كتير، لكن العلاج الكويس غالبًا مزيج: مهارات وعلاج سلوكي وتعديل في البيئة، حسب سنك وحالتك.</p></div>
+      </details>
+      <details class="myth">
+        <summary><span class="tag m">خرافة</span><span>السكر هو اللي بيسبب ADHD.</span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="ans"><span class="tag f">حقيقة</span><p>مفيش دليل إن السكر بيسبب ADHD. اللي أبحاثه واضحة هو دور الوراثة والعوامل العصبية.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="help">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">قراية دقيقتين</p>
+      <h2>اللي بيساعد فعلًا</h2>
+      <p class="tldr"><b>الخلاصة</b>مفيش حل واحد يناسب الكل. الأبحاث بتدعم الدمج بين أكتر من أسلوب حسب حالتك.</p>
+    </header>
+    <div class="prose">
+      <div class="help">
+        <article>
+          <h3>الدوا</h3>
+          <p>أدوية ADHD بتقلل الأعراض الأساسية عند ناس كتير. الدكتور المختص هو اللي بيختار النوع والجرعة بعد التقييم وبيتابعك. ما تبدأش ولا توقف دوا من نفسك.</p>
+        </article>
+        <article>
+          <h3>علاج سلوكي وتدريب مهارات</h3>
+          <p>جلسات بتعلّمك تنظيم الوقت والمهام وإدارة الاندفاع والمشاعر، زي العلاج المعرفي السلوكي. للأطفال في تدريب للأهل وتنسيق مع المدرسة، وللأطفال الصغار غالبًا ده بيكون الخطوة الأولى.</p>
+        </article>
+        <article>
+          <h3>رتّب بيئتك</h3>
+          <ul>
+            <li>تذكيرات ومنبّهات على الموبايل.</li>
+            <li>مكان ثابت للمفاتيح والمحفظة والحاجات المهمة.</li>
+            <li>قسّم المهمة الكبيرة لخطوات صغيرة.</li>
+            <li>اشتغل في فترات تركيز قصيرة، وبينها راحة.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>نمط حياتك</h3>
+          <p>نوم كفاية ومنتظم بيحسّن الانتباه والذاكرة والتحكم في المشاعر. الحركة والرياضة بتفرّق مع ناس كتير، وروتين يومي بسيط بيقلل القرارات اللي لازم تاخدها كل يوم.</p>
+        </article>
+      </div>
+      <p class="small">أي قرار بخصوص الدوا أو الجرعات يكون مع الدكتور المتابع لحالتك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="know">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">قراية ٣ دقايق</p>
+      <h2>اتعرّف وافهم</h2>
+      <p class="tldr"><b>الخلاصة</b>الفهم قبل أي حل. لاحظ الأول، وبعدين جرّب. اختار مين بتتكلم عنه.</p>
+    </header>
+    <div class="prose">
+      <div class="seg" id="who-seg" role="group" aria-label="اختار مين بتتعرّف عليه">
+        <button type="button" data-k="self" aria-pressed="true">نفسك</button>
+        <button type="button" data-k="child" aria-pressed="false">ابنك أو بنتك</button>
+        <button type="button" data-k="student" aria-pressed="false">طالبك أو طالبتك</button>
+      </div>
+
+      <div class="panel who-panel" id="who-self">
+        <h3>اتعرّف على نفسك</h3>
+        <p>الهدف مش إنك تبقى شخص تاني. الهدف إنك تفهم مخك وتبني حواليه نظام يشتغل معاك، مش ضدك.</p>
+        <div class="who-grid">
+          <div class="blk full">
+            <h4>لاحظ لمدة أسبوع</h4>
+            <ul>
+              <li>إمتى في اليوم تركيزك بيبقى أحسن؟</li>
+              <li>إيه أكتر ٣ حاجات بتشتتك؟</li>
+              <li>أنهي مهام بتتأجل عندك دايمًا؟ وأنهي خطوة فيها بتعطّلك: البداية ولا الإنهاء؟</li>
+              <li>إيه اللي بيخليك تبدأ: ميعاد، حد معاك، مكافأة، ولا ضغط؟</li>
+            </ul>
+          </div>
+          <div class="blk">
+            <h4>جرّب</h4>
+            <ul>
+              <li>اكتب كل حاجة مهمة. متعتمدش على الذاكرة لوحدها.</li>
+              <li>حط تذكيرات على الموبايل ومكان ثابت للمفاتيح والمحفظة.</li>
+              <li>ابدأ بخطوة صغيرة تاخد ٥ دقايق، واستخدم الأدوات اللي فوق.</li>
+              <li>نام كفاية ومنتظم. النوم بيفرّق في الانتباه والمشاعر.</li>
+            </ul>
+          </div>
+          <div class="blk no">
+            <h4>تجنّب</h4>
+            <ul>
+              <li>مقارنة نفسك بحد منظّم بطبعه ولومك لنفسك.</li>
+              <li>إنك تستنى تحس بالحماس عشان تبدأ. ابدأ صغير، والحماس ممكن يجي بعدين.</li>
+              <li>إنك تشيل كل حاجة لوحدك. اطلب مساعدة من متخصص أو من حد قريب.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel who-panel" id="who-child" hidden>
+        <h3>اتعرّف على ابنك أو بنتك</h3>
+        <p>غالبًا مش بيعاند عشان يضايقك. بيحاول، ومخه بيصعّبها عليه. لما تفهم ده، شكل الخناقات بيتغيّر.</p>
+        <div class="who-grid">
+          <div class="blk full">
+            <h4>لاحظ لمدة أسبوع</h4>
+            <ul>
+              <li>إمتى بيبقى أهدى وأقدر على التركيز؟</li>
+              <li>إيه المواقف اللي بتفجّر المشاكل: الصبح، الواجب، ولا الانتقال من حاجة لحاجة؟</li>
+              <li>إيه اللي بيحفّزه ويفرّحه فعلًا؟</li>
+              <li>هل نفس الصعوبات بتظهر في البيت وفي المدرسة؟ ده سؤال مهم للمتخصص.</li>
+            </ul>
+          </div>
+          <div class="blk">
+            <h4>جرّب</h4>
+            <ul>
+              <li>تعليمات قصيرة وواضحة، واحدة في المرة، بعد ما تتأكد إنه سامعك.</li>
+              <li>روتين ثابت وجدول مرئي معلّق في مكان يشوفه.</li>
+              <li>مدح فوري ومحدد: «برافو إنك لبست لوحدك» أحسن من «برافو عليك».</li>
+              <li>قسّم الواجب لقطع قصيرة وبينها حركة.</li>
+              <li>اسأل المتخصص عن تدريب الأهل. هو من أكتر الأساليب المدعومة.</li>
+            </ul>
+          </div>
+          <div class="blk no">
+            <h4>تجنّب</h4>
+            <ul>
+              <li>العقاب والتوبيخ على حاجات مش بإرادته، زي النسيان والحركة.</li>
+              <li>أوامر كتير مرة واحدة.</li>
+              <li>المقارنة بإخواته أو زمايله.</li>
+              <li>تأجيل طلب التقييم لو الصعوبات مستمرة وبتأثر عليه.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel who-panel" id="who-student" hidden>
+        <h3>اتعرّف على طالبك</h3>
+        <p>الطالب اللي بيشرد أو بيتحرك كتير مش دايمًا مش مهتم. ساعات تعديلات صغيرة في الفصل بتفرّق معاه كتير.</p>
+        <div class="who-grid">
+          <div class="blk full">
+            <h4>لاحظ لمدة أسبوعين</h4>
+            <ul>
+              <li>في أنهي أوقات اليوم وأنهي مواد تركيزه أحسن؟</li>
+              <li>الصعوبة في بدء المهمة، ولا في إنهائها، ولا في تنظيم شنطته وكراريسه؟</li>
+              <li>هل بيتحسن مع المهام القصيرة أو لما بيتحرك شوية؟</li>
+              <li>هل مدرسين تانيين بيلاحظوا نفس الحاجة؟ دوّن الأمثلة وشاركها مع الأهل.</li>
+            </ul>
+          </div>
+          <div class="blk">
+            <h4>جرّب</h4>
+            <ul>
+              <li>مكانه قريب منك وبعيد عن الباب والشباك.</li>
+              <li>تعليمات قصيرة ومكتوبة على السبورة، ومهمة كبيرة مقسّمة لخطوات.</li>
+              <li>فترات شغل قصيرة، وبينها حركة مسموحة زي توزيع الورق.</li>
+              <li>تقدير فوري ومحدد، وتقرير يومي بسيط بينك وبين الأهل.</li>
+              <li>وقت إضافي في الامتحان لو ينفع، بالتنسيق مع الإدارة.</li>
+            </ul>
+          </div>
+          <div class="blk no">
+            <h4>تجنّب</h4>
+            <ul>
+              <li>إحراجه قدام الفصل أو التعليق على شروده.</li>
+              <li>تفسير الأعراض على إنها قلة احترام.</li>
+              <li>الاعتماد على الكلام الشفهي الطويل بس.</li>
+              <li>إنك تشخّصه بنفسك. دورك تلاحظ وتبلّغ الأهل، والتشخيص عند متخصص.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="small">دي اقتراحات عملية عامة، والمتخصص بيظبطها حسب حالة كل شخص. ولو لاحظت نمط مستمر بيعطّل الحياة، شوف <a href="#care">خطوات التقييم</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec tools stack" id="tools">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">جرّب بإيدك</p>
+      <h2>أدوات تجرّبها دلوقتي</h2>
+      <p class="tldr"><b>الخلاصة</b>مؤقت تركيز بجلسات قصيرة، ومقسّم مهام بيعرضلك خطوة واحدة بس في المرة.</p>
+    </header>
+    <div class="tools-grid">
+
+      <div class="tool" id="timer">
+        <div>
+          <h3>مؤقت التركيز</h3>
+          <p class="sub">ابدأ بمدة صغيرة تقدر تلتزم بيها. الأهم إنك تبدأ.</p>
+        </div>
+        <div class="chips" role="group" aria-label="مدة الجلسة">
+          <button class="chip" type="button" data-m="10" aria-pressed="false">١٠ دقايق</button>
+          <button class="chip" type="button" data-m="15" aria-pressed="false">١٥ دقيقة</button>
+          <button class="chip" type="button" data-m="25" aria-pressed="true">٢٥ دقيقة</button>
+        </div>
+        <div class="ring">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="trk" cx="60" cy="60" r="54"/><circle class="prg" id="prg" cx="60" cy="60" r="54"/></svg>
+          <div class="clock"><b id="clock" role="timer" aria-live="off">٢٥:٠٠</b><small id="phase">جلسة تركيز</small></div>
+        </div>
+        <p class="status" id="tstatus" aria-live="polite">اختار مدة وابدأ. أي فكرة تانية تيجي في بالك، اكتبها على ورقة وارجع للمهمة.</p>
+        <div class="row">
+          <button class="btn primary" id="tstart" type="button">ابدأ</button>
+          <button class="btn" id="treset" type="button">من الأول</button>
+          <button class="btn" id="tbreak" type="button" hidden>استراحة ٥ دقايق</button>
+        </div>
+        <label class="inline" for="tsound"><input type="checkbox" id="tsound" checked>صوت تنبيه لما الوقت يخلص</label>
+      </div>
+
+      <div class="tool" id="steps">
+        <div>
+          <h3>مقسّم المهام</h3>
+          <p class="sub">مهمة كبيرة؟ قسّمها لخطوات تاخد ٥ دقايق أو أقل. هتشوف الخطوة الجاية بس.</p>
+        </div>
+        <div>
+          <label class="lbl" for="st-title">المهمة</label>
+          <input class="field" id="st-title" type="text" maxlength="80" autocomplete="off" placeholder="مثال: أرتّب أوراق الجامعة">
+        </div>
+        <p class="eg" id="st-eg">ده مثال جاهز. غيّر العنوان، امسح الخطوات، واكتب مهمتك.</p>
+        <div class="pwrap"><div class="pbar" aria-hidden="true"><i id="st-bar"></i></div><span id="st-count">٠ من ٠</span></div>
+        <ul class="steps" id="st-list"></ul>
+        <form class="addrow" id="st-form" autocomplete="off">
+          <label class="vh" for="st-new">خطوة جديدة</label>
+          <input class="field" id="st-new" type="text" maxlength="100" placeholder="مثال: أفتح الكتاب على أول صفحة">
+          <button class="btn primary" type="submit">زوّد خطوة</button>
+        </form>
+        <p class="status" id="st-msg" aria-live="polite"></p>
+        <div class="row"><button class="btn" id="st-clear" type="button">ابدأ مهمة جديدة</button></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="care">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="meta">قراية دقيقة</p>
+      <h2>لو حابب تتقيّم</h2>
+      <p class="tldr"><b>الخلاصة</b>التشخيص بيتم عند متخصص، مش من موقع ولا من اختبار على النت.</p>
+    </header>
+    <div class="prose">
+      <ol class="seq">
+        <li>
+          <div>
+            <h3>اكتب أمثلة من حياتك</h3>
+            <p>الصعوبات بدأت امتى؟ بتظهر فين: البيت، المذاكرة، الشغل؟ وبتعطّلك في إيه بالظبط؟ شهادات المدرسة القديمة وكلام أهلك عن طفولتك ممكن يفيدوا.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>اختار المتخصص المناسب</h3>
+            <p>طبيب نفسي أو طبيب أعصاب أو أخصائي نفسي مؤهل في تقييم ADHD. للأطفال: طبيب نفسي أطفال أو طبيب أطفال عنده خبرة في الموضوع.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>التقييم نفسه</h3>
+            <p>مقابلة وتاريخ من الطفولة واستبيانات، وساعات معلومات من الأهل أو المدرسة. مفيش تحليل دم ولا أشعة بتأكد ADHD لوحدها. والمتخصص بيسأل كمان عن القلق والاكتئاب والنوم، لأنهم بيشبهوا ADHD وكتير بييجوا معاه.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="support">لو حاسس بإحباط شديد أو بتفكر تأذي نفسك، متستناش. كلّم حد قريب منك دلوقتي أو اتصل بخدمات الطوارئ في بلدك.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>الموقع ده تعليمي ومش بديل عن تشخيص أو علاج من متخصص.</p>
+    <p>المصادر اللي اتبنى عليها المحتوى:</p>
+    <ul>
+      <li><a href="https://nimh.nih.gov/sites/default/files/documents/health/publications/adhd-2024.pdf" target="_blank" rel="noopener">المعهد الوطني للصحة النفسية الأمريكي (NIMH): نشرة ADHD لسنة ٢٠٢٤</a></li>
+      <li><a href="https://www.simplypsychology.org/treatment-for-adhd.html" target="_blank" rel="noopener">Simply Psychology: Treatment for ADHD</a></li>
+    </ul>
+    <p class="credit">© ٢٠٢٦ تاب واحد · جميع الحقوق محفوظة · تم تطوير الموقع بواسطة <b><bdi>Yousef Ayman</bdi></b></p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+'use strict';
+const AR='٠١٢٣٤٥٦٧٨٩';
+const ar=n=>String(n).replace(/\d/g,d=>AR[d]);
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const load=k=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):null}catch(e){return null}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+
+/* reading progress */
+const bar=$('#bar');
+let ticking=false;
+function updProgress(){
+  const h=document.documentElement;
+  const max=h.scrollHeight-h.clientHeight;
+  const p=max>0?Math.min(1,Math.max(0,(window.scrollY||h.scrollTop||0)/max)):0;
+  bar.style.setProperty('--p',p.toFixed(3));
+  ticking=false;
+}
+window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updProgress)}},{passive:true});
+updProgress();
+
+/* current section in nav */
+const links=$$('.nav a');
+const byId={};
+links.forEach(a=>{byId[a.getAttribute('href').slice(1)]=a});
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting&&byId[e.target.id]){
+        links.forEach(a=>a.removeAttribute('aria-current'));
+        byId[e.target.id].setAttribute('aria-current','true');
+      }
+    });
+  },{rootMargin:'-25% 0px -65% 0px'});
+  $$('main section[id]').forEach(s=>io.observe(s));
+}
+
+/* hero tabs */
+const br=$('#browser'),tbtn=$('#tabbtn'),tcount=$('#tabcount');
+const totalTabs=$$('.tab',br).length;
+tbtn.addEventListener('click',()=>{
+  const on=br.classList.toggle('single');
+  tbtn.setAttribute('aria-pressed',String(on));
+  tbtn.textContent=on?'افتح التابات تاني':'اقفل التابات الزيادة';
+  tcount.textContent=on?'تاب واحد مفتوح':ar(totalTabs)+' تابات مفتوحة';
+});
+
+/* types */
+const TYPES={
+  inatt:{ar:'غلبة الانتباه',en:'Predominantly Inattentive',
+    d:'الأعراض الأساسية في الانتباه والتنظيم، من غير حركة زايدة أو اندفاع واضح.',
+    kid:'بيشرد في الفصل، بينسى الواجب وأدواته، وبيسيب اللعبة أو الشغلانة من النص.',
+    adult:'صعوبة في إنهاء المهام وتنظيم الوقت والمواعيد، وحاجات بتضيع وبتتنسي.',
+    note:'صاحبه غالبًا هادي ومش بيزعج حد، فبيتفوّت كتير ويتفسّر على إنه «حالم» أو «مش مهتم».'},
+  hyper:{ar:'غلبة الحركة والاندفاع',en:'Predominantly Hyperactive-Impulsive',
+    d:'الأعراض الأساسية في الحركة الزايدة والاندفاع، من غير مشكلة انتباه بارزة.',
+    kid:'بيجري ويتسلق ومبيقعدش، بيتكلم كتير وبيقاطع ومش بيستنى دوره.',
+    adult:'توتر وعدم ارتياح من جوّا، وقرارات سريعة من غير تفكير كفاية في العواقب.',
+    note:'عند الكبار الحركة الظاهرة ممكن تقل وتتحول لإحساس داخلي بعدم الراحة، فمش بتبان دايمًا من بره.'},
+  comb:{ar:'النوع المشترك',en:'Combined Presentation',
+    d:'أعراض من المجموعتين مع بعض: الانتباه والتنظيم، وكمان الحركة والاندفاع.',
+    kid:'شرود ونسيان مع حركة وكلام وتسرّع في نفس الوقت.',
+    adult:'تأجيل وفوضى في التنظيم، مع قلق داخلي وتسرّع في الكلام أو القرارات.',
+    note:'الصورة ممكن تتغيّر مع العمر. حد يبدأ بنوع ويظهر عليه نوع تاني بعد سنين.'}
+};
+const tbtns=$$('#type-seg button');
+function showType(k){
+  const t=TYPES[k];
+  tbtns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===k)));
+  $('#type-ar').textContent=t.ar;
+  $('#type-en').textContent=t.en;
+  $('#type-d').textContent=t.d;
+  $('#type-kid').textContent=t.kid;
+  $('#type-adult').textContent=t.adult;
+  $('#type-note').textContent=t.note;
+}
+tbtns.forEach(b=>b.addEventListener('click',()=>showType(b.dataset.k)));
+showType('inatt');
+
+/* self-reflection checklist */
+const ITEMS_A=[
+  'بغلط غلطات صغيرة في الشغل أو المذاكرة لأني مش بركّز في التفاصيل.',
+  'صعب أفضل مركّز في مهمة أو محاضرة أو كلام طويل.',
+  'ساعات بحس إني سامع بس مش واخد الكلام، حتى لو حد بيكلمني مباشرة.',
+  'ببدأ حاجات ومبخلّصهاش، أو بنسى الخطوة اللي في النص.',
+  'تنظيم المهام والوقت والحاجات صعب عليا.',
+  'بتجنّب أو بأجّل الحاجات اللي محتاجة مجهود ذهني طويل.',
+  'بضيّع حاجات ضرورية: مفاتيح، موبايل، ورق.',
+  'أي حاجة صغيرة بتشتتني.',
+  'بنسى حاجات يومية: مواعيد، ردود، فواتير.'
+];
+const ITEMS_H=[
+  'بحرّك إيدي أو رجلي أو بتململ وأنا قاعد.',
+  'بقوم من مكاني في أماكن المفروض أقعد فيها.',
+  'بحس بعدم ارتياح من جوّا ومش عارف أستقر.',
+  'صعب أعمل حاجة هادية من غير ما أحس بملل أو ضيق.',
+  'بحس إني ماشي بموتور، ودايمًا في حركة.',
+  'بتكلم كتير.',
+  'بجاوب قبل ما السؤال يخلص.',
+  'صعب أستنى دوري.',
+  'بقاطع الناس أو بدخل في كلامهم.'
+];
+const counts={a:0,h:0};
+function buildList(boxSel,arr,key){
+  const box=$(boxSel);
+  arr.forEach((t,i)=>{
+    const l=document.createElement('label');
+    l.className='chk';
+    const c=document.createElement('input');
+    c.type='checkbox';
+    c.id='c-'+key+i;
+    c.dataset.g=key;
+    const s=document.createElement('span');
+    s.textContent=t;
+    l.append(c,s);
+    box.append(l);
+    c.addEventListener('change',()=>{l.classList.toggle('on',c.checked);calc()});
+  });
+}
+function calc(){
+  counts.a=$$('input[data-g="a"]:checked').length;
+  counts.h=$$('input[data-g="h"]:checked').length;
+  $('#cnt-a').textContent=ar(counts.a)+' من '+ar(ITEMS_A.length);
+  $('#cnt-h').textContent=ar(counts.h)+' من '+ar(ITEMS_H.length);
+  const box=$('#result'),txt=$('#result-text');
+  const flag=counts.a>=5||counts.h>=5;
+  box.classList.toggle('flag',flag);
+  if(counts.a+counts.h===0){
+    txt.textContent='علّم على اللي بيحصل معاك. مفيش إجابة صح أو غلط، ومفيش حاجة بتتحفظ أو بتتبعت لحد.';
+  }else if(flag){
+    txt.textContent='علّمت ٥ أعراض أو أكتر في مجموعة. ده مش تشخيص، لكنه سبب كويس تكلّم متخصص وتحكيله الأمثلة دي، خصوصًا لو بتعطّل دراستك أو شغلك أو علاقاتك.';
+  }else{
+    txt.textContent='لحد دلوقتي علّمت '+ar(counts.a)+' في الانتباه و'+ar(counts.h)+' في الحركة والاندفاع. أي رقم هنا مش دليل على حاجة لوحده. لو الصعوبات بتعطّلك فعلًا، كلّم متخصص برضه، لأن التقييم بيبص على الصورة كلها مش على العدد بس.';
+  }
+}
+buildList('#list-a',ITEMS_A,'a');
+buildList('#list-h',ITEMS_H,'h');
+$('#chk-reset').addEventListener('click',()=>{
+  $$('.chk input').forEach(c=>{c.checked=false;c.closest('.chk').classList.remove('on')});
+  calc();
+});
+calc();
+
+/* who */
+const wbtns=$$('#who-seg button');
+function showWho(k){
+  wbtns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===k)));
+  $$('.who-panel').forEach(p=>{p.hidden=p.id!=='who-'+k});
+}
+wbtns.forEach(b=>b.addEventListener('click',()=>showWho(b.dataset.k)));
+
+/* focus timer */
+const C=339.292;
+const tm={len:25*60,left:25*60,end:0,run:false,id:null,brk:false};
+let focusMin=25;
+let actx=null;
+const clockEl=$('#clock'),prg=$('#prg'),tstart=$('#tstart'),tbreak=$('#tbreak'),tstatus=$('#tstatus'),phase=$('#phase');
+function say(msg,alert){tstatus.textContent=msg;tstatus.classList.toggle('alert',!!alert)}
+function fmt(s){
+  const m=Math.floor(s/60),x=s%60;
+  return ar((m<10?'0':'')+m)+':'+ar((x<10?'0':'')+x);
+}
+function renderTimer(){
+  clockEl.textContent=fmt(tm.left);
+  prg.style.strokeDashoffset=(C*(1-tm.left/tm.len)).toFixed(2);
+  phase.textContent=tm.brk?'استراحة':'جلسة تركيز';
+  tstart.textContent=tm.run?'إيقاف مؤقت':(tm.left>0&&tm.left<tm.len?'كمّل':'ابدأ');
+}
+function unlockAudio(){
+  try{
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(AC&&!actx)actx=new AC();
+    if(actx&&actx.state==='suspended')actx.resume();
+  }catch(e){}
+}
+function beep(){
+  if(!$('#tsound').checked||!actx)return;
+  try{
+    [0,.28,.56].forEach((t,i)=>{
+      const o=actx.createOscillator(),g=actx.createGain(),n=actx.currentTime+t;
+      o.frequency.value=i===2?880:660;
+      o.connect(g);g.connect(actx.destination);
+      g.gain.setValueAtTime(.0001,n);
+      g.gain.exponentialRampToValueAtTime(.25,n+.03);
+      g.gain.exponentialRampToValueAtTime(.0001,n+.22);
+      o.start(n);o.stop(n+.25);
+    });
+  }catch(e){}
+}
+function toIdle(){
+  clearInterval(tm.id);
+  tm.run=false;tm.brk=false;
+  tm.len=focusMin*60;tm.left=tm.len;
+  tbreak.hidden=true;
+  renderTimer();
+}
+function tick(){
+  tm.left=Math.max(0,Math.round((tm.end-Date.now())/1000));
+  renderTimer();
+  if(tm.left<=0)finish();
+}
+function finish(){
+  clearInterval(tm.id);
+  tm.run=false;tm.left=0;
+  renderTimer();
+  beep();
+  if(!tm.brk){
+    say('خلصت الجلسة. كويس إنك كمّلت لحد آخرها. خد استراحة قصيرة.',true);
+    tbreak.hidden=false;
+  }else{
+    toIdle();
+    say('الاستراحة خلصت. جاهز لجلسة تانية؟',true);
+  }
+}
+function startTimer(){
+  unlockAudio();
+  if(tm.run){
+    clearInterval(tm.id);tm.run=false;renderTimer();
+    say('واقف. كمّل لما تكون جاهز.');
+    return;
+  }
+  if(tm.left<=0)tm.left=tm.len;
+  tm.end=Date.now()+tm.left*1000;
+  tm.run=true;
+  tbreak.hidden=true;
+  clearInterval(tm.id);
+  tm.id=setInterval(tick,250);
+  say(tm.brk?'استراحة: قوم، اشرب مية، اتحرك شوية.':'خطوة واحدة بس قدامك. أي فكرة تانية اكتبها على ورقة وارجع.');
+  renderTimer();
+}
+tstart.addEventListener('click',startTimer);
+$('#treset').addEventListener('click',()=>{toIdle();say('جاهز. ابدأ لما تحب.')});
+tbreak.addEventListener('click',()=>{
+  unlockAudio();
+  tm.brk=true;tm.len=5*60;tm.left=tm.len;
+  startTimer();
+});
+$$('.chip').forEach(b=>b.addEventListener('click',()=>{
+  focusMin=Number(b.dataset.m);
+  $$('.chip').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  toIdle();
+  say('اخترت '+ar(focusMin)+' دقيقة. ابدأ لما تحب.');
+}));
+renderTimer();
+
+/* step breaker */
+const KEY='tab-wahid-steps-v1';
+let st=load(KEY);
+if(!st||!Array.isArray(st.steps)){
+  st={title:'أذاكر فصل الأحياء',eg:true,steps:[
+    {t:'أطلّع الكتاب والكشكول والقلم',d:false},
+    {t:'أقرا أول صفحتين بس',d:false},
+    {t:'ألخّص اللي قريته في ٣ سطور',d:false},
+    {t:'أحل ٥ أسئلة من آخر الفصل',d:false}
+  ]};
+}
+const persist=()=>save(KEY,st);
+function renderSteps(focusId){
+  const list=$('#st-list');
+  list.textContent='';
+  const next=st.steps.findIndex(x=>!x.d);
+  st.steps.forEach((x,i)=>{
+    const li=document.createElement('li');
+    li.className='step'+(x.d?' done':'')+(i===next?' next':'');
+    const cb=document.createElement('input');
+    cb.type='checkbox';cb.checked=x.d;cb.id='st-c'+i;
+    const lab=document.createElement('label');
+    lab.htmlFor=cb.id;
+    if(i===next){const tg=document.createElement('em');tg.textContent='الخطوة الجاية';lab.append(tg)}
+    const tx=document.createElement('span');
+    tx.textContent=x.t;
+    lab.append(tx);
+    const del=document.createElement('button');
+    del.type='button';del.className='del';
+    del.setAttribute('aria-label','احذف الخطوة: '+x.t);
+    del.textContent='×';
+    cb.addEventListener('change',()=>{x.d=cb.checked;persist();renderSteps('st-c'+i)});
+    del.addEventListener('click',()=>{st.steps.splice(i,1);st.eg=false;persist();renderSteps()});
+    li.append(cb,lab,del);
+    list.append(li);
+  });
+  const total=st.steps.length,done=st.steps.filter(x=>x.d).length;
+  $('#st-count').textContent=ar(done)+' من '+ar(total);
+  $('#st-bar').style.width=(total?Math.round(done/total*100):0)+'%';
+  $('#st-eg').hidden=!st.eg;
+  $('#st-title').value=st.title||'';
+  const msg=$('#st-msg');
+  if(!total)msg.textContent='اكتب أول خطوة. خليها صغيرة لدرجة إنها تبان سهلة.';
+  else if(done===total)msg.textContent='خلّصت كل الخطوات. ده إنجاز حقيقي، وتستاهل استراحة.';
+  else msg.textContent='ركّز في الخطوة الجاية بس. الباقي مستني.';
+  if(focusId){const f=document.getElementById(focusId);if(f)f.focus()}
+}
+$('#st-title').addEventListener('input',e=>{st.title=e.target.value;st.eg=false;$('#st-eg').hidden=true;persist()});
+$('#st-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const inp=$('#st-new');
+  const v=inp.value.trim();
+  if(!v)return;
+  st.steps.push({t:v,d:false});
+  st.eg=false;
+  persist();
+  inp.value='';
+  renderSteps();
+  inp.focus();
+});
+$('#st-clear').addEventListener('click',()=>{
+  st={title:'',eg:false,steps:[]};
+  persist();
+  renderSteps();
+  $('#st-title').focus();
+});
+renderSteps();
+})();
+</script>
+
+</body>
+</html>
